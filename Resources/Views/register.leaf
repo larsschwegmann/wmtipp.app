@@ -1,0 +1,80 @@
+#set("head") {
+    <link rel="stylesheet" href="/css/floating_labels.css">
+}
+    
+#set("content") {
+    <form class="form-signin" method="POST" action="/register">
+        <div class="text-center mb-4">
+            <img class="mb-4" src="/img/worldcup.svg" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Registrieren</h1>
+            <p>Hier kannst du dir ein Konto für die WMTipp App anlegen. Du hast bereits ein Konto? Dann <a href="/login">melde dich hier an!</a></p>
+        </div>
+        
+        #if(error) {
+        <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            Bei deiner Registrierung sind Fehler aufgetreten. Folgende Bedingungen müssen erfüllt sein:
+            <ul>
+                <li>Der Benutzername muss aus Alphanumerischen Zeichen bestehen (0-9, a-z, A-Z)</li>
+                <li>Die Email darf nur einmal zum Registrieren benutzt werden</li>
+                <li>Das Passwort muss mindestest 8 Zeichen enthalten</li>
+                <li>Das "Passwort wiederholen" Feld muss muss mit dem "Passwort" Feld übereinstimmen.</li>
+                <li>Du musst den Datenschutzbedingungen und den Regeln zustimmen</li>
+            </ul>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        }
+        
+        <div class="form-row">
+            <div class="col">
+                <div class="form-label-group">
+                    <input name="firstName" type="text" id="inputFirstName" class="form-control" placeholder="Vorname" value="#(firstName)" required autofocus>
+                    <label for="inputFirstName">Vorname</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-label-group">
+                    <input name="lastName" type="text" id="inputLastName" class="form-control" placeholder="Nachname" value="#(lastName)" required>
+                    <label for="inputLastName">Nachname</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-label-group">
+            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" value="#(email)" required>
+            <label for="inputEmail">Email Adresse</label>
+            <small id="usernameHelpBlock" class="form-text text-muted">
+                Wir versenden keine Newsletter.
+            </small>
+        </div>
+        <div class="form-label-group">
+            <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Benutzername" value="#(username)" required>
+            <label for="inputUsername">Benutzername</label>
+            <small id="usernameHelpBlock" class="form-text text-muted">
+                Dieser Benutzername taucht in öffentlichen Ranglisten auf. Es sind nur Alphanumerische Zeichen erlaubt.
+            </small>
+        </div>
+        <div class="form-label-group">
+            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <label for="inputPassword">Passwort</label>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                Dein Passwort muss mindestens 8 Zeichen enthalten
+            </small>
+        </div>
+        <div class="form-label-group">
+            <input name="passwordRepeat" type="password" id="inputPasswordRepeat" class="form-control" placeholder="Passwort wiederholen" required>
+                <label for="inputPasswordRepeat">Passwort wiederholen</label>
+        </div>
+        <div class="custom-control custom-checkbox mb-2">
+            <input name="acceptDSGVO" type="checkbox" class="custom-control-input" id="dsgvo" value="true" required>
+            <label class="custom-control-label" for="dsgvo">Ich habe die <a target="__blank" href="/dsgvo">Datenschutzvereinbarung</a> gelesen und akzeptiere diese</label>
+        </div>
+        <div class="custom-control custom-checkbox mb-2">
+            <input name="acceptRules" type="checkbox" class="custom-control-input" id="rules" value="true" required>
+            <label class="custom-control-label" for="rules">Ich habe die <a target="__blank" href="/rules">Regeln</a> gelesen und akzeptiere diese</label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Registrieren</button>
+    </form>
+}
+    
+#embed("base")

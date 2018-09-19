@@ -1,0 +1,199 @@
+#set("content") {
+
+#if(daysRemaining > 0) {
+    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-wc18-2 rounded box-shadow">
+        <img class="mr-3" src="/img/worldcup_white.svg" alt="" width="48" height="48">
+        <div class="lh-100">
+            <h6 class="mb-0 text-white lh-100">#(daysRemaining) Tage verbleibend</h6>
+            <small>Bis zur WM 2018 in Russland</small>
+        </div>
+    </div>
+}
+
+#if(!userLoggedIn) {
+  <div class="jumbotron mt-3 py-4">
+      <h1 class="display-5">Erstmal Gut Kick! in die Runde 🤘</h1>
+      <p class="lead">
+          Herzlich Willkommen zur WMTipp App für die Fussball Weltmeisterschaft 2018 in Russland.
+      </p>
+      <a class="btn btn-success btn-lg" href="/register" role="button">Registrieren</a>
+      <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
+  </div>
+}
+
+
+<div class="row mt-3">
+  <div class="col">
+    <div class="jumbotron py-4 bg-stadium text-light">
+      <div align="center">
+        #if(currentDate < endDate) {
+        <h2>Heutige Spiele</h2>
+        #if(count(todaysMatches) == 0) {
+          <p class="lead my-0">Heute finden keine Spiele statt!</p>
+        } else {
+          <table class="mt-4 table-hover">
+            #for(match in todaysMatches) {
+            <tr class="py-2 clickable-row" data-href="/match/#(match.id)">
+							<td width="100px">
+								<div class="my-2" align="center">
+									<a href="/match/#(match.id)"><div data-toggle="tooltip" data-placement="bottom" title="#(match.team1.name)" style="width: 80px; height:60px;" class="flag-icon-background rounded flag-icon-#(match.team1.flagCode)"></div></a>
+								</div>
+							</td>
+							<td width="120px">
+								<div align="center">
+									#if(dateIsBefore(match.date, currentDate)){
+										<a class="text-light" href="/match/#(match.id)"><h3 style="margin:0; padding:0;">#(match.goalsTeam1) : #(match.goalsTeam2)</h3></a>
+									} else {
+                    <a class="text-light" href="/match/#(match.id)"><h3 style="font-size:14pt; margin:0; padding:0;">#date(match.date, "HH:mm") Uhr</h3></a>
+									}
+									#if(userLoggedIn){
+										<small style="font-size:12pt; margin:0; padding:0;">
+                        #if(match.bet.betTeam1) {
+                          Tipp: <a href="/bets" class="text-light"><strong>#(match.bet.betTeam1) : #(match.bet.betTeam2)</a></strong>
+                        } else {
+                          #if(match.bet.betTeam2) {
+                            Tipp: <a href="/bets" class="text-light"><strong>#(match.bet.betTeam1) : #(match.bet.betTeam2)</a></strong>
+                          } else {
+                            <a href="/bets" class="text-red">Kein Tipp!</span>
+                          }
+                        }
+										</small>
+                  }
+								</div>
+							</td>
+							<td width="100px">
+								<div align="center">
+									<a href="/match/#(match.id)"><div data-toggle="tooltip" data-placement="bottom" title="#(match.team2.name)" style="width: 80px; height:60px;" class="flag-icon-background rounded flag-icon-#(match.team2.flagCode)"></div></a>
+								</div>
+							</td>
+						</tr>
+          }
+          </table>
+        }
+      } else {
+        #if(userLoggedIn) {
+          <h2>Die WM ist vorbei!</h2>
+          <p>Danke fürs deine Teilnahme! Du hast den <strong>#(userRank). Platz</strong> erreicht.<br/> Herzlichen Glückwunsch!</p>
+        } else {
+          <h2>Die WM ist vorbei!</h2>
+        }
+      }
+      </div>
+    </div>
+
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h4 class="border-bottom border-gray pb-2 mb-0">Neuigkeiten</h4>
+        #if(publicAnnouncements) {
+          #for(news in publicAnnouncements) {
+            <div class="media pt-3">
+                <!--<img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">-->
+                <div class="media-body border-bottom border-gray">
+                  <h6 class="my-0">#(news.title) <br/><small class="text-muted">@#(news.author.username), #date(news.date, "dd.MM, HH:mm") Uhr</small></h6>
+                  #if(news.type == "plainText") {
+                    <p class="small">#(news.content)</p>
+                  } else {
+                    #raw(news.content)
+                  }
+                </div>
+            </div>
+          }
+        } else {
+          <p class="text-muted">Hier gibt es (noch) nichts zu sehen</p>
+        }
+        <!--
+        <small class="d-block text-right mt-3">
+            <a href="#">Alle Neuigkeiten</a>
+        </small>
+      -->
+    </div>
+
+  </div>
+  <div class="col-lg-4">
+    <div class="p-3 bg-white rounded box-shadow">
+        <h5 class="my-0">Top 10 Rangliste</h5>
+        <div class="media pt-3">
+            #embed("embeds/scoreboard_embed")
+        </div>
+        <a href="/scoreboard">Alle anzeigen</a>
+    </div>
+    #if(currentDate < endDate) {
+    <div class="p-3 mt-4  mb-3 bg-white rounded box-shadow">
+        <h5 class="mb-3">Nächste Spiele</h5>
+        <table class="table table-sm table-responsive-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Datum</th>
+              <th scope="col" style="min-width: 150px;" colspan="3">Begegnung</th>
+              #if(userLoggedIn){<th scope="col">Tipp</th>}
+            </tr>
+          </thead>
+          <tbody>
+            #for(match in tomorrowsMatches) {
+              <tr>
+                <td>#(match.id)</td>
+                <td>#date(match.date, "dd.MM, HH:mm")</td>
+                <td><span class="flag-icon rounded flag-icon-#(match.team1.flagCode)"></span></td>
+                <td>#(match.team1.shortName) : #(match.team2.shortName)</td>
+                <td><span class="flag-icon rounded flag-icon-#(match.team2.flagCode)"></span></td>
+                #if(userLoggedIn){
+                  #if(match.bet.betTeam1) {
+                    <td><a href="/bets">#(match.bet.betTeam1) : #(match.bet.betTeam2)</a></td>
+                  } else {
+                    #if(match.bet.betTeam2) {
+                      <td><a href="/bets">#(match.bet.betTeam1) : #(match.bet.betTeam2)</a></td>
+                    } else {
+                      <td><a href="/bets" style="color: red;">- : -</a></td>
+                    }
+                  }
+                }
+              </tr>
+            }
+          </tbody>
+        </table>
+    </div>
+    }
+    <!--
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h5 class="border-bottom border-gray pb-2 mb-0">Suggestions</h5>
+        <div class="media text-muted pt-3">
+            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <strong class="text-gray-dark">Full Name</strong>
+                        <a href="#">Follow</a>
+                    </div>
+                    <span class="d-block">@username</span>
+                </div>
+                </div>
+        <div class="media text-muted pt-3">
+            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <strong class="text-gray-dark">Full Name</strong>
+                        <a href="#">Follow</a>
+                    </div>
+                    <span class="d-block">@username</span>
+                </div>
+                </div>
+        <div class="media text-muted pt-3">
+            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <strong class="text-gray-dark">Full Name</strong>
+                        <a href="#">Follow</a>
+                    </div>
+                    <span class="d-block">@username</span>
+                </div>
+                </div>
+        <small class="d-block text-right mt-3">
+            <a href="#">All suggestions</a>
+        </small>
+    </div>
+  -->
+  </div>
+</div>
+
+}
+
+#embed("base")

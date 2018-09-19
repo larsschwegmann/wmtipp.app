@@ -1,0 +1,22 @@
+
+#set("content") {
+
+
+
+}
+
+#set("subnav") {
+
+<div class="nav-scroller bg-white box-shadow">
+    <nav class="nav nav-underline">
+        <a class="nav-link active" href="/admin/dashboard">Dashboard</a>
+        <a class="nav-link" href="/admin/mailgun">Mailgun</a>
+        <a class="nav-link" href="/admin/news">News</a>
+        <a class="nav-link" href="/admin/results">Ergebnisse eintragen</a>
+        <a class="nav-link" href="/admin/groupwinners">Gruppensieger</a>
+    </nav>
+</div>
+
+}
+
+#embed("base")

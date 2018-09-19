@@ -1,0 +1,4 @@
+module CNIOOpenSSL {
+    umbrella "/Users/lars/Documents/Development/Personal Projects/WMTipp-Server/.build/checkouts/swift-nio-ssl.git--7383566295644627528/Sources/CNIOOpenSSL/include"
+    export *
+}

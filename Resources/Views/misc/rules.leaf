@@ -1,0 +1,64 @@
+
+#set("content") {
+<div id="regeln" class="mt-3">
+    <div id="regelitem">
+        <H2>Spielregeln </H2>
+        Das Mitspielen bei unserem Tippspiel ist ganz einfach. Doch wie jedes Spiel
+        hat auch dieses seine eigenen Regeln. Wir tippen die Begegnungen der Fu&szlig;ball WM 2018 in Russland.<br>
+    </div>
+    <div id="regelitem">
+        <h2>Die Anmeldung</h2>
+        Vor der Abgabe des ersten Tipps muss sich jeder Mitspieler <a href="/register">anmelden</a>. <br>
+        Ihre Daten werden von uns vertraulich behandelt und nicht an Dritte weitergegeben.
+    </div>
+    
+    <div id="regelitem">
+        <h2>Die Tippabgabe</h2>
+        Jeder gibt, nat&uuml;rlich im voraus, bis sp&auml;testens zum Spielbeginn seine Ergebnistipps ab.
+        Alle Tipps k&ouml;nnen bis zum jeweiligen Spielbeginn
+        jederzeit ge&auml;ndert werden.
+        Der Weltmeistertipp kann bis eine Stunde vor dem Er&ouml;ffnungsspiel
+        abgegeben bzw. ge&auml;ndert werden.
+        Die Tipps k&ouml;nnen <b>nur online</b> abgegeben werden.
+    </div>
+    <div id="regelitem">
+        <h2>Die Bewertung </h2>
+        Die Tipps werden nach Ende der Spiele mit den tats&auml;chlichen
+        Ergebnissen der Begegnungen verglichen und mit folgenden Punkten
+        bewertet:<br>
+        <br>
+        <span style="color: red;">10 Punkte</span> f&uuml;r den richtigen Weltmeister-Tipp<br>
+        <span style="color: red;">3 Punkte</span> f&uuml;r einen Volltreffer (genaue Vorraussage des Ergebnisses)<br>
+        <span style="color: red;">2 Punkte</span> f&uuml;r die richtige Tendenz + die richtige Tordifferenz (Bsp.: 2:1&nbsp;und 1:0 wurde getippt)<br>
+        <span style="color: red;">2 Punkte</span> f&uuml;r Unentschieden aber falsches Ergebnis (Bsp.: 3:3&nbsp;und 2:2 wurde getippt)<br>
+        <span style="color: red;">1 Punkt</span> wenn nur die Tendenz richtig ist. (Bsp.: Ergebnis 2:1 und 3:1 wurde getippt)<br>
+        <span style="color: red;">0 Punkte</span> wenn Tendenz nicht richtig, oder nicht getippt wurde.<br>
+    </div>
+    <div id="regelitem">
+        <h2>Finalspiele </h2>
+        Kommt es in den Spielen der zweiten Phase (ab Achtelfinale) zu einer
+        Verl&auml;ngerung oder zu einem
+        Elfmeterschiessen, wird der Endstand nach der Verl&auml;ngerung bzw.
+        dem Elfmeterschiessen als
+        Ergebnis eingetragen und gewertet.<br>
+        (Es macht also nicht unbedingt Sinn bei diesen Spielen ein
+        Unentschieden zu tippen 😉)
+    </div>
+    <div id="regelitem">
+        <h2>Sonstiges </h2>
+        F&uuml;r etwaige &Uuml;bertragungsfehler und sonstige technische
+        Schwierigkeiten ist der Veranstalter in keiner Weise verantwortlich zu
+        machen.<br>
+        Mit der Anmeldung zum Spiel werden diese Bedingungen akzeptiert. Sollte
+        ein Mitspieler diese Regeln nicht akzeptieren k&ouml;nnen, behalten wir
+        uns vor, seinen Account aus dem Tippspiel zu l&ouml;schen.<br>
+        Weitere Regeln k&ouml;nnen auch w&auml;hrend des laufenden Tippspiels
+        hier aufgef&uuml;hrt werden.
+        <br/>
+        <br/>
+    </div>
+</div>
+</div>
+}
+
+#embed("base")

@@ -1,0 +1,72 @@
+#set("content") {
+<div class="container mb-5">
+    <h1>#(queriedUser.firstName) #get(" ") #(queriedUser.lastName)</h1>
+    <h2>Weltmeister Tipp:
+        #for(team in teams) {
+            #if(queriedUser.champBet == nil) { - }
+            #if(team.id == queriedUser.champBet) { #(team.name) <span class="flag-icon flag-icon-#(team.flagCode) rounded"></span> }
+        }
+    </h2>
+    #for(groupLetter in groupLetters) {
+    <h3>Gruppe #(groupLetter)</h3>
+    <div class="row">
+        <div class="col">
+            <div class="my-3 p-3 bg-white rounded box-shadow">
+                <h6 class="pb-2 mb-0">Spiele</h6>
+                <div class="media pt-3">
+                    <table class="table table-sm table-responsive-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Begegnung</th>
+                                <th scope="col" colspan="2">Tipp</th>
+                                <th scope="col">Erg.</th>
+                                <th scope="col">Pkte.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            #for(match in matches) {
+                            #if(match.team1.groupLetter == groupLetter) {
+                            #set("bet", arrayGet(bets, index))
+                            <tr>
+                                <th scope="row">#(match.id)</th>
+                                <td><span class="flag-icon flag-icon-#(match.team1.flagCode) rounded"></span> #(match.team1.name)</td>
+                                <td style="min-width: 80px;">
+                                    #if(dateIsBefore(match.date, currentDate)) {
+                                        <span name="betGoalsTeam1" value="#(match.finalGoalsTeam1)">#(bet.betTeam1) : #(bet.betTeam2)<span name="betGoalsTeam2" value="#(match.finalGoalsTeam2)">
+                                    } else {
+                                        - : -
+                                    }
+                                </td>
+                                <td align="right">#(match.team2.name) <span class="flag-icon flag-icon-#(match.team2.flagCode) rounded"></span></td>
+                                <td>
+                                    #if(match.isFinished) {
+                                        #(match.finalGoalsTeam1) : #(match.finalGoalsTeam2)</td>
+                                    } else {
+                                        - : -
+                                    }
+                                </td>
+                                <td>
+                                    #if(match.isFinished) {
+                                        #(bet.score)
+                                    } else {
+                                        -
+                                    }
+                                </td>
+                            </tr>
+                            }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    }
+</div>
+
+
+}
+
+#embed("base")

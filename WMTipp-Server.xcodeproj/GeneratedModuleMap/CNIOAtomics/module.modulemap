@@ -1,0 +1,4 @@
+module CNIOAtomics {
+    umbrella "/Users/lars/Documents/Development/Personal Projects/WMTipp-Server/.build/checkouts/swift-nio.git--4981015466703438069/Sources/CNIOAtomics/include"
+    export *
+}

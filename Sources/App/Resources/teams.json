@@ -1,0 +1,233 @@
+ [
+  {
+  "TeamId": 1392,
+  "TeamName": "Ägypten",
+  "ShortName": "EGY",
+  "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/20px-Flag_of_Egypt.svg.png",
+  "Group": "A"
+  },
+  {
+  "TeamId": 764,
+  "TeamName": "Argentinien",
+  "ShortName": "ARG",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/20px-Flag_of_Argentina.svg.png",
+  "Group": "D"
+  },
+  {
+  "TeamId": 750,
+  "TeamName": "Australien",
+  "ShortName": "AUS",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Australia.svg/20px-Flag_of_Australia.svg.png",
+  "Group": "C"
+  },
+  {
+  "TeamId": 2673,
+  "TeamName": "Belgien",
+  "ShortName": "BEL",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/20px-Flag_of_Belgium_%28civil%29.svg.png",
+  "Group": "G"
+  },
+  {
+  "TeamId": 753,
+  "TeamName": "Brasilien",
+  "ShortName": "BRA",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/20px-Flag_of_Brazil.svg.png",
+  "Group": "E"
+  },
+  {
+  "TeamId": 2669,
+  "TeamName": "Costa Rica",
+  "ShortName": "CRC",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/20px-Flag_of_Costa_Rica.svg.png",
+  "Group": "E"
+  },
+  {
+  "TeamId": 758,
+  "TeamName": "Dänemark",
+  "ShortName": "DNK",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/20px-Flag_of_Denmark.svg.png",
+  "Group": "C"
+  },
+  {
+  "TeamId": 139,
+  "TeamName": "Deutschland",
+  "ShortName": "DEU",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/20px-Flag_of_Germany.svg.png",
+  "Group": "F"
+  },
+  {
+  "TeamId": 755,
+  "TeamName": "England",
+  "ShortName": "ENG",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/18px-Flag_of_England.svg.png",
+  "Group": "G"
+  },
+  {
+  "TeamId": 144,
+  "TeamName": "Frankreich",
+  "ShortName": "FRA",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/20px-Flag_of_France.svg.png",
+  "Group": "C"
+  },
+  {
+  "TeamId": 2672,
+  "TeamName": "Iran",
+  "ShortName": "IRN",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/20px-Flag_of_Iran.svg.png",
+  "Group": "B"
+  },
+  {
+  "TeamId": 1394,
+  "TeamName": "Island",
+  "ShortName": "ISL",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Iceland.svg/200px-Flag_of_Iceland.svg.png",
+  "Group": "D"
+  },
+  {
+  "TeamId": 749,
+  "TeamName": "Japan",
+  "ShortName": "JPN",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/20px-Flag_of_Japan.svg.png",
+  "Group": "H"
+  },
+  {
+  "TeamId": 1469,
+  "TeamName": "Kolumbien",
+  "ShortName": "COL",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png",
+  "Group": "H"
+  },
+  {
+  "TeamId": 146,
+  "TeamName": "Kroatien",
+  "ShortName": "CRO",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/20px-Flag_of_Croatia.svg.png",
+  "Group": "D"
+  },
+  {
+  "TeamId": 4629,
+  "TeamName": "Marokko",
+  "ShortName": "MAR",
+  "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/20px-Flag_of_Morocco.svg.png",
+  "Group": "B"
+  },
+  {
+  "TeamId": 761,
+  "TeamName": "Mexiko",
+  "ShortName": "MEX",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/20px-Flag_of_Mexico.svg.png",
+  "Group": "F"
+  },
+  {
+  "TeamId": 847,
+  "TeamName": "Nigeria",
+  "ShortName": "NIG",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/20px-Flag_of_Nigeria.svg.png",
+  "Group": "D"
+  },
+  {
+  "TeamId": 4631,
+  "TeamName": "Panama",
+  "ShortName": "PAN",
+  "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Flag_of_Panama.svg/18px-Flag_of_Panama.svg.png",
+  "Group": "G"
+  },
+  {
+  "TeamId": 3177,
+  "TeamName": "Peru",
+  "ShortName": "PER",
+  "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Peru.svg/20px-Flag_of_Peru.svg.png",
+  "Group": "C"
+  },
+  {
+  "TeamId": 4633,
+  "TeamName": "Platzhalter",
+  "ShortName": "---",
+  "TeamIconUrl": ""
+  },
+  {
+  "TeamId": 1410,
+  "TeamName": "Polen",
+  "ShortName": "POL",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/23px-Flag_of_Poland.svg.png",
+  "Group": "H"
+  },
+  {
+  "TeamId": 149,
+  "TeamName": "Portugal",
+  "ShortName": "PRT",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/20px-Flag_of_Portugal.svg.png",
+  "Group": "B"
+  },
+  {
+  "TeamId": 150,
+  "TeamName": "Russland",
+  "ShortName": "RUS",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/20px-Flag_of_Russia.svg.png",
+  "Group": "A"
+  },
+  {
+  "TeamId": 2408,
+  "TeamName": "Saudi-Arabien",
+  "ShortName": "SAU",
+  "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/20px-Flag_of_Saudi_Arabia.svg.png",
+  "Group": "A"
+  },
+  {
+  "TeamId": 151,
+  "TeamName": "Schweden",
+  "ShortName": "SWE",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/200px-Flag_of_Sweden.svg.png",
+  "Group": "F"
+  },
+  {
+  "TeamId": 38,
+  "TeamName": "Schweiz",
+  "ShortName": "",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Civil_Ensign_of_Switzerland_%28Pantone%29.svg/23px-Civil_Ensign_of_Switzerland_%28Pantone%29.svg.png",
+  "Group": "E"
+  },
+  {
+  "TeamId": 4630,
+  "TeamName": "Senegal",
+  "ShortName": "SEN",
+  "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/20px-Flag_of_Senegal.svg.png",
+  "Group": "H"
+  },
+  {
+  "TeamId": 1404,
+  "TeamName": "Serbien",
+  "ShortName": "SRB",
+  "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Flag_of_Serbia.svg",
+  "Group": "E"
+  },
+  {
+  "TeamId": 170,
+  "TeamName": "Spanien",
+  "ShortName": "ESP",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/20px-Flag_of_Spain.svg.png",
+  "Group": "B"
+  },
+  {
+  "TeamId": 751,
+  "TeamName": "Südkorea",
+  "ShortName": "KOR",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/20px-Flag_of_South_Korea.svg.png",
+  "Group": "F"
+  },
+  {
+  "TeamId": 1391,
+  "TeamName": "Tunesien",
+  "ShortName": "TUN",
+  "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Tunisia.svg/20px-Flag_of_Tunisia.svg.png",
+  "Group": "G"
+  },
+  {
+  "TeamId": 849,
+  "TeamName": "Uruguay",
+  "ShortName": "URY",
+  "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/20px-Flag_of_Uruguay.svg.png",
+  "Group": "A"
+  }
+  ]
+

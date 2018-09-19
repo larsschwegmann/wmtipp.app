@@ -1,0 +1,35 @@
+#set("head") {
+    <link rel="stylesheet" href="/css/floating_labels.css">
+}
+
+#set("content") {
+<form class="form-signin" method="POST" action="/login">
+    <div class="text-center mb-4">
+        <img class="mb-4" src="/img/worldcup.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+        <p>Wenn du bereits ein Konto hast, kannst du dich hier anmelden. Du hast noch kein Konto? <a href="/register">Registriere dich hier!</a></p>
+    </div>
+
+    #if(error) {
+        <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            #(error)
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    <div class="form-label-group">
+        <input name="email" type="text" id="inputEmail" class="form-control" placeholder="Email Adresse" required autofocus>
+        <label for="inputEmail">Email Adresse oder Benutzername</label>
+    </div>
+
+    <div class="form-label-group">
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Passwort" required>
+        <label for="inputPassword">Passwort</label>
+    </div>
+    <input type="hidden" name="csrf" value="#(csrf)">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+</form>
+}
+
+#embed("base")

@@ -1,0 +1,82 @@
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col"><span class="fa fa-angle-double-up"></span></th>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Punkte</th>
+        </tr>
+    </thead>
+    <tbody>
+        #for(ranking in scoreboard) {
+          #if(title == "Rangliste") {
+            #if(ranking.userId == user.id) {
+                <tr>
+                  <td style="background-color: #b8e994">
+                    #if(ranking.prevRank == -1) {
+                      <ion-icon name="remove" style="color: gray;"></ion-icon>
+                    } else {
+                      #if(ranking.prevRank < ranking.rank) {
+                        <ion-icon name="arrow-down" style="color: red;"></ion-icon>
+                      }
+                      #if(ranking.prevRank > ranking.rank) {
+                        <ion-icon name="arrow-up" style="color: green;"></ion-icon>
+                      }
+                      #if(ranking.prevRank == ranking.rank) {
+                        <ion-icon name="remove" style="color: gray;"></ion-icon>
+                      }
+                    }
+                  </td>
+                  <td style="background-color: #b8e994">#(ranking.rank)</td>
+                  <td style="background-color: #b8e994"><a href="/users/#(ranking.userId)" #if(userLoggedIn) { data-toggle="tooltip" data-placement="bottom" title="#(ranking.firstName) #get(" ") #(ranking.lastName)" }>@#(ranking.username)</a></td>
+                  <td style="background-color: #b8e994">#(ranking.score)</td>
+                </tr>
+            } else {
+              <tr>
+                <td>
+                  #if(ranking.prevRank == -1) {
+                    <ion-icon name="remove" style="color: gray;"></ion-icon>
+                  } else {
+                    #if(ranking.prevRank < ranking.rank) {
+                      <ion-icon name="arrow-down" style="color: red;"></ion-icon>
+                    }
+                    #if(ranking.prevRank > ranking.rank) {
+                      <ion-icon name="arrow-up" style="color: green;"></ion-icon>
+                    }
+                    #if(ranking.prevRank == ranking.rank) {
+                      <ion-icon name="remove" style="color: gray;"></ion-icon>
+                    }
+                  }
+                </td>
+                <td>#(ranking.rank)</td>
+                <td><a href="/users/#(ranking.userId)" #if(userLoggedIn) { data-toggle="tooltip" data-placement="bottom" title="#(ranking.firstName) #get(" ") #(ranking.lastName)" }>@#(ranking.username)</a></td>
+                <td>#(ranking.score)</td>
+              </tr>
+            }
+          } else {
+            #if(index < 10) {
+              <tr>
+                  <td>
+                    #if(ranking.prevRank == -1) {
+                      <ion-icon name="remove" style="color: gray;"></ion-icon>
+                    } else {
+                      #if(ranking.prevRank < ranking.rank) {
+                        <ion-icon name="arrow-down" style="color: red;"></ion-icon>
+                      }
+                      #if(ranking.prevRank > ranking.rank) {
+                        <ion-icon name="arrow-up" style="color: green;"></ion-icon>
+                      }
+                      #if(ranking.prevRank == ranking.rank) {
+                        <ion-icon name="remove" style="color: gray;"></ion-icon>
+                      }
+                    }
+                  </td>
+                  <td>#(ranking.rank)</td>
+                  <td><a href="/users/#(ranking.userId)" #if(userLoggedIn) { data-toggle="tooltip" data-placement="bottom" title="#(ranking.firstName) #get(" ") #(ranking.lastName)" }>@#(ranking.username)</a></td>
+                  <td>#(ranking.score)</td>
+              </tr>
+            }
+          }
+        }
+    </tbody>
+</table>

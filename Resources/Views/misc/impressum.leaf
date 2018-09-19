@@ -1,0 +1,113 @@
+
+#set("content") {
+
+<div class="container mt-3">
+    
+    <h1>Impressum</h1>
+    Lars Schwegmann<br/>
+    Freisinger Landstr. 45A<br/>
+    85748 Garching b. München<br/>
+    <br/>
+    Telefon: +49 160 94420035<br/>
+    Email: <a href="mailto:schwegmannlars@gmail.com">schwegmannlars@gmail.com</a><br/>
+    Internet: <a href="http://larsschwegmann.com">larsschwegmann.com</a><br/>
+    <br/>
+    <strong>Inhalt des Onlineangebotes:</strong><br>
+    <ul>
+        <li>Der Autor &uuml;bernehmen keinerlei Gew&auml;hr f&uuml;r
+            die Aktualit&auml;t,
+            Korrektheit, Vollst&auml;ndigkeit oder Qualit&auml;t der
+            bereitgestellten
+            Informationen. Haftungsanspr&uuml;che gegen den Autor, welche sich auf
+            Sch&auml;den materieller oder ideeller Art beziehen, die durch die
+            Nutzung
+            oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung
+            fehlerhafter und unvollst&auml;ndiger Informationen verursacht wurden
+            sind
+            grunds&auml;tzlich ausgeschlossen, sofern seitens des Autors kein
+            nachweislich vors&auml;tzliches oder grob fahrl&auml;ssiges Verschulden
+            vorliegt.</li>
+        <li>Alle Angebote sind freibleibend und unverbindlich.</li>
+        <li>Der Autor beh&auml;lt es sich ausdr&uuml;cklich vor, Teile
+            der Seiten oder das
+            gesamte Angebot ohne gesonderte Ank&uuml;ndigung zu ver&auml;ndern, zu
+            erg&auml;nzen,
+            zu l&ouml;schen oder die Ver&ouml;ffentlichung zeitweise oder
+            endg&uuml;ltig
+            einzustellen.</li>
+    </ul>
+    <br/>
+    <strong>Copyright:</strong><br>
+    <ul>
+        <li>Alle Artikel unterliegen dem Urheberrecht des jeweiligen
+            Autors. Die
+            &Uuml;bernahme von Texten in Datenbest&auml;nde, die
+            ausschlie&szlig;lich f&uuml;r den
+            privaten Gebrauch bestimmt sind, ist gestattet. Die &Uuml;bernahme und
+            Nutzung der Daten zu anderen Zwecken bedarf der schriftlichen
+            Zustimmung.</li>
+        <li>Alle Bilder sind urheberrechtlich gesch&uuml;tzt. Das
+            Urheberrecht ist nicht
+            &uuml;bertragbar. Die &Uuml;bernahme von Bilddaten in
+            Datenbest&auml;nde, die
+            ausschlie&szlig;lich f&uuml;r den privaten Gebrauch bestimmt sind, ist
+            gestattet.
+            Die &Uuml;bernahme und Nutzung der Daten zu anderen Zwecken bedarf der
+            schriftlichen Zustimmung.</li>
+        <li>Der Autor ist bestrebt, in allen Publikationen die
+            Urheberrechte der
+            verwendeten Grafiken, Tondokumente, Videosequenzen und Texte zu
+            beachten, von ihm selbst erstellte Grafiken, Tondokumente,
+            Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken,
+            Tondokumente, Videosequenzen und Texte zur&uuml;ckzugreifen. Alle
+            innerhalb
+            des Internetangebotes genannten und ggf. durch Dritte gesch&uuml;tzten
+            Marken- und Warenzeichen unterliegen uneingeschr&auml;nkt den
+            Bestimmungen
+            des jeweils g&uuml;ltigen Kennzeichenrechts und den Besitzrechten der
+            jeweiligen eingetragenen Eigent&uuml;mer. Allein aufgrund der
+            blo&szlig;en Nennung
+            ist nicht der Schlu&szlig; zu ziehen, dass Markenzeichen nicht durch
+            Rechte
+            Dritter gesch&uuml;tzt sind!</li>
+    </ul>
+    <br/>
+    <strong>Hinweis:</strong><br>
+    <ul>
+        <li>Das Landgericht Hamburg hat mit Urteil vom 12.05.1998
+            entschieden, dass
+            man durch die Ausbringung eines Links die Inhalte der gelinkten Seite
+            ggf. mit zu verantworten hat. Dies kann - so das LG - nur dadurch
+            verhindert werden, dass man sich ausdr&uuml;cklich von diesen Inhalten
+            distanziert.</li>
+        <li>Auf diesen Webseiten befinden sich Links zu anderen Seiten
+            im Internet.
+            F&uuml;r all diese Links gilt: Die Betreiber haben keinerlei Einfluss
+            auf
+            die Gestaltung und die Inhalte der gelinkten Seiten.</li>
+        <li>Deshalb distanzieren wir uns hiermit ausdr&uuml;cklich von
+            allen Inhalten
+            aller gelinkten Seiten auf allen Webseiten inkl. aller Unterseiten.</li>
+        <li>Diese Erkl&auml;rung gilt f&uuml;r alle ausgebrachten Links
+            und f&uuml;r alle Inhalte der Seiten, zu denen Links oder Banner
+            f&uuml;hren.</li>
+    </ul>
+    <br/>
+    <strong>Datenschutz:</strong><br>
+    <ul>
+        <li>Sofern innerhalb des Internetangebotes die M&ouml;glichkeit
+            zur Eingabe
+            pers&ouml;nlicher oder gesch&auml;ftlicher Daten (Emailadressen, Namen,
+            Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens des
+            Nutzers auf ausdr&uuml;cklich freiwilliger Basis. Die Inanspruchnahme
+            und
+            Bezahlung aller angebotenen Dienste ist - soweit technisch m&ouml;glich
+            und
+            zumutbar - auch ohne Angabe solcher Daten bzw. unter Angabe
+            anonymisierter Daten oder eines Pseudonyms gestattet.</li>
+    </ul>
+</div>
+
+}
+
+#embed("base")

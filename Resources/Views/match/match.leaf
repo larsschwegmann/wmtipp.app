@@ -1,0 +1,172 @@
+#set("content") {
+  <div class="row my-3">
+    <div class="col">
+      <div class="row">
+        <div class="col">
+          <div class="jumbotron bg-stadium text-light">
+            <div class="row">
+              <div class="col">
+                <div class="my-2" align="center">
+                  <div style="width: 120px; height:90px;" class="flag-icon-background rounded flag-icon-#(match.team1.flagCode)"></div>
+                  <h2 data-toggle="tooltip" data-placement="bottom" title="Elo: #(match.team1.elo)" class="mt-2">#(match.team1.name)</h2>
+                </div>
+              </div>
+              <div class="col my-auto">
+                <div align="center">
+                  #if(dateIsBefore(match.date, currentDate)){
+                    <h1>#(match.finalGoalsTeam1) : #(match.finalGoalsTeam2)</h1>
+                  } else {
+                    <h1>#date(match.date, "dd.MM. HH:mm") Uhr</h1>
+                  }
+                </div>
+              </div>
+              <div class="col">
+                <div class="my-2" align="center">
+                  <div style="width: 120px; height:90px;" class="flag-icon-background rounded flag-icon-#(match.team2.flagCode)"></div>
+                  <h2 data-toggle="tooltip" data-placement="bottom" title="Elo: #(match.team2.elo)" class="mt-2">#(match.team2.name)</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="p-3 mb-3 bg-white rounded box-shadow">
+            <h5 class="border-bottom pb-1">Statistik</h5>
+            <div>
+              <h6>Erwartete Gewinnwahrscheinlichkeit <small class="text-muted"><a target="__blank" href="https://eloratings.net/about">Was ist das?</a></small></h6>
+              <div class="progress" style="width: 100%;">
+                <div class="progress-bar #if(EW_1 > EW_2) { bg-success } else { bg-danger }" role="progressbar" style="width: #(EW_1)%;" aria-valuenow="#(EW_1)" aria-valuemin="0" aria-valuemax="100">#(EW_1)%</div>
+                <div class="progress-bar #if(EW_1 < EW_2) { bg-success } else { bg-danger }" role="progressbar" style="width: #(EW_2)%;" aria-valuenow="#(EW_2)" aria-valuemin="0" aria-valuemax="100">#(EW_2)%</div>
+              </div>
+            </div>
+            <div class="mt-2">
+              <h6>Tippverteilung</h6>
+              <div class="progress" style="width: 100%;">
+                <div class="progress-bar #if(T1 > T2) { bg-success } else { bg-danger }" role="progressbar" style="width: #(T1)%;" aria-valuenow="#(T1)" aria-valuemin="0" aria-valuemax="100">#(T1)%</div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: #(U)%;" aria-valuenow="#(U)" aria-valuemin="0" aria-valuemax="100">#(U)%</div>
+                <div class="progress-bar #if(T1 < T2) { bg-success } else { bg-danger }" role="progressbar" style="width: #(T2)%;" aria-valuenow="#(T2)" aria-valuemin="0" aria-valuemax="100">#(T2)%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="p-3 bg-white rounded box-shadow">
+            <h5 class="my-0">Tipps</h5>
+            <div class="media pt-3">
+              <table class="table table-sm table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2">#</th>
+                    <th scope="col">Benutzername</th>
+                    <th scope="col">Tipp</th>
+                    <th scope="col">Pkte.</th>
+                    <th scope="col">Ges.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  #for(tuple in bets) {
+                    #set("ranking", tuple.rank)
+                    <tr #if(user.id == ranking.userId){ class="table-success"}>
+                      <td>
+                        #if(ranking.prevRank == -1) {
+                          <ion-icon name="remove" style="color: gray;"></ion-icon>
+                        } else {
+                          #if(ranking.prevRank < ranking.rank) {
+                            <ion-icon name="arrow-down" style="color: red;"></ion-icon>
+                          }
+                          #if(ranking.prevRank > ranking.rank) {
+                            <ion-icon name="arrow-up" style="color: green;"></ion-icon>
+                          }
+                          #if(ranking.prevRank == ranking.rank) {
+                            <ion-icon name="remove" style="color: gray;"></ion-icon>
+                          }
+                        }
+                      </td>
+                      <td>#(tuple.rank.rank)</td>
+                      <td><a href="/users/#(tuple.user.id)" #if(userLoggedIn) { data-toggle="tooltip" data-placement="bottom" title="#(tuple.user.firstName) #get(" ") #(tuple.user.lastName)" }>@#(tuple.user.username)</a></td>
+                      <td>
+                        #if(dateIsBefore(match.date, currentDate)) {
+                          #(tuple.bet.betTeam1) : #(tuple.bet.betTeam2)
+                        } else {
+                          - : -
+                        }
+                      </td>
+                      <td>#(tuple.bet.score)</td>
+                      <td>#(tuple.rank.score)</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      #if(groupTable){
+      <div class="p-3 mb-3 bg-white rounded box-shadow">
+          <h5 class="mb-0">Gruppentabelle</h5>
+          <div class="media pt-3">
+              <table class="table table-sm">
+                  <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Team</th>
+                          <th scope="col">Tore</th>
+                          <th scope="col">Diff.</th>
+                          <th scope="col">Punkte</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      #for(entry in groupTable) {
+                        #if(isFirst || index == 1) {
+                          <tr class="table-success">
+                        } else {
+                          <tr>
+                        }
+                          <td>#(int(index + 1))</td>
+                          <td>#(entry.team.name)</td>
+                          <td>#(entry.goals)</td>
+                          <td>#(entry.diff)</td>
+                          <td>#(entry.score)</td>
+                        </tr>
+                      }
+                  </tbody>
+              </table>
+          </div>
+      </div>
+    }
+      <div class="p-3 bg-white rounded box-shadow">
+        <h5 class="my-0">Fakten zum Spiel</h5>
+        <div class="media pt-3">
+          <table class="table table-sm">
+            <tbody>
+              <tr>
+                <td>Anstoß</td>
+                <td align="right">#date(match.date, "dd.MM.yy, HH:mm") Uhr</td>
+              </tr>
+              <tr>
+                <td>Stadion</td>
+                <td align="right">#(match.location.stadium)</td>
+              </tr>
+              <tr>
+                <td>Ort</td>
+                <td align="right">#(match.location.city)</td>
+              </tr>
+              <tr>
+                <td>Zuschauer</td>
+                <td align="right">#if(match.viewerCount){#(match.viewerCount)} else {-}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+#embed("base")

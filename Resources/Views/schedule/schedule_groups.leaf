@@ -1,0 +1,97 @@
+#set("content") {
+
+<div class="d-flex align-items-center p-3 my-3 text-white-50 bg-wc18-2 rounded box-shadow">
+    <div class="lh-100">
+        <h2 class="mb-0 text-white lh-100">Gruppenspiele</h2>
+    </div>
+</div>
+<div class="container">
+    #for(groupLetter in groupLetters) {
+        <h3>Gruppe #(groupLetter)</h3>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="my-3 p-3 bg-white rounded box-shadow">
+                    <h6 class="pb-2 mb-0">Tabelle</h6>
+                    <div class="media pt-3">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Team</th>
+                                    <th scope="col">Tore</th>
+                                    <th scope="col">Diff.</th>
+                                    <th scope="col">Punkte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                #for(entry in arrayGet(groupTables, index)) {
+                                    #if(isFirst || index == 1) {
+                                        <tr class="table-success">
+                                    } else {
+                                        <tr>
+                                    }
+                                        <td>#(int(index + 1))</td>
+                                        <td>#(entry.team.name)</td>
+                                        <td>#(entry.goals)</td>
+                                        <td>#(entry.diff)</td>
+                                        <td>#(entry.score)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="my-3 p-3 bg-white rounded box-shadow">
+                    <h6 class="pb-2 mb-0">Spiele</h6>
+                    <div class="media pt-3">
+                        <table class="table table-sm table-responsive-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Anstoß</th>
+                                    <th scope="col" colspan="3">Begegnung</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                #for(match in matches) {
+                                    #if(match.team1.groupLetter == groupLetter) {
+                                        <tr>
+                                            <th scope="row">#(match.id)</th>
+                                            <td>#date(match.date, "dd.MM., HH:mm")</td>
+                                            <td><span class="flag-icon flag-icon-#(match.team1.flagCode) rounded"></span> #(match.team1.name)</td>
+                                            #if(match.isFinished) {
+                                                <td style="min-width: 50px;">#(match.finalGoalsTeam1) : #(match.finalGoalsTeam2)</td>
+                                            } else {
+                                                <td style="min-width: 50px;">- : -</td>
+                                            }
+                                            <td align="right">#(match.team2.name) <span class="flag-icon flag-icon-#(match.team2.flagCode) rounded"></span></td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        }
+</div>
+
+
+}
+
+#set("subnav") {
+
+<div class="nav-scroller bg-white box-shadow">
+    <nav class="nav nav-underline">
+        <a class="nav-link active" href="/schedule/groups">Gruppenspiele</a>
+        <a class="nav-link" href="/schedule/ko">K.O. Runde</a>
+    </nav>
+</div>
+
+}
+
+#embed("base")
